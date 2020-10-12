@@ -1,0 +1,19 @@
+mailboxes:
+  someone@something.xyz:
+    server: imap.something.xyz
+    username: someone
+    ## Passwords can either be supplied directly, or, through a helper command
+    # password: my-secret-password
+    password_cmd: lpass show --password -q "my-username"
+    maildir: ~/.mail
+    use_tls: true
+    user_starttls: false
+    folders:
+      # Either specify folders to be included, or folders to be excluded:
+      # Default is to include all folders
+      include:
+      #  - INBOX
+      #  - INBOX.MyFolder
+      #  - INBOX.Something
+      exclude:
+      #   - INBOX.Spam
